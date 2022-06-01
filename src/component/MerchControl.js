@@ -1,7 +1,7 @@
 import React from 'react';
 import NewMerchForm from './NewMerchForm';
-import MerchList from './NewList';
-import MerchDetail from './MerchDetail';
+import MerchList from './MerchList';
+import MerchDetail from "./MerchDetail";
 import EditMerchForm from './EditMerchForm';
 
 class MerchControl extends React.Component {
@@ -59,6 +59,7 @@ class MerchControl extends React.Component {
         selectedMerch:null
     });
     }
+
     render (){
         let currentlyVisibleState = null;
         let buttonText = null;
@@ -84,6 +85,8 @@ class MerchControl extends React.Component {
                 {currentlyVisibleState}
                 <button onClick={this.handleClick}>{buttonText}</button>
             </React.Fragment>
-        )
+        );
     }
 }
+
+export default MerchControl;

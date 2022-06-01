@@ -9,15 +9,21 @@ function ReusableForm(props) {
                 name = 'name'
                 placeholder = 'Band Name' />
                 <input 
-                type = 'integer'
+                type = 'number'
                 name = 'quantity'
                 placeholder = 'Total merch left'/>
                 <textarea
                 name='details'
                 placeholder='Merch description' />
-                <button type
-
+                <button type ='submit'>{props.buttonText}</button>
             </form>        
         </React.Fragment>
-    )
+    );
 }
+
+ReusableForm.propTypes = {
+    formSubmissionHandler: PropTypes.func,
+    buttonText: PropTypes.string
+};
+
+export default ReusableForm;
