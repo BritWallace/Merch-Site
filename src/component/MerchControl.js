@@ -73,6 +73,7 @@ class MerchControl extends React.Component {
             merch = {this.state.selectedMerch}
             onClickingDelete = {this.handleDeletingMerch}
             onClickingEdit = {this.handleEditClick} />
+            buttonText="Return to Ticket List";
         }
         else if (this.state.formVisibleOnPage) {
             currentlyVisibleState = <NewMerchForm onNewMerchCreation={this.handleAddingNewMerchToList} />
