@@ -21,7 +21,7 @@
 _A React app that can keep track of band merch.  This application is able to track specific details on the various merch this is available.  There is full CRUD applied to the user of this app._
 
 ## Component Diagram
-![Image Name](Image Link)  
+![Image Name](https://github.com/BritWallace/Merch-Site/blob/main/src/Img/Merch%20Site%20Diagram.jpg?raw=true)  
 ## Setup/Installation Requirements
 
 * _Clone this repository from https://github.com/BritWallace/Merch-Site.git_
