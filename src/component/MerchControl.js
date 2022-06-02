@@ -29,7 +29,7 @@ class MerchControl extends React.Component {
         }
     }
     handleChangingSelectedMerch = (id) => {
-        const selectedMerch = this.state.selectedMerch.filter(merch => merch.id === id)[0];
+        const selectedMerch = this.state.mainMerchList.filter(merch => merch.id === id)[0];
         this.setState({selectedMerch: selectedMerch});
     }
     handleAddingNewMerchToList = (newMerch) => {
@@ -63,14 +63,16 @@ class MerchControl extends React.Component {
     render (){
         let currentlyVisibleState = null;
         let buttonText = null;
-
-        if (this.state.selectedMerch != null) {
+        
+        if (this.state.editing) {
+            currentlyVisibleState = <EditMerchForm merch = {this.state.selectedMerch} onEditMerch={this.handleEditingMerchInList}/>
+            buttonText = "Return to Ticket List";
+        } else if (this.state.selectedMerch != null) {
             currentlyVisibleState =
             <MerchDetail
             merch = {this.state.selectedMerch}
             onClickingDelete = {this.handleDeletingMerch}
             onClickingEdit = {this.handleEditClick} />
-            currentlyVisibleState = <EditMerchForm merch = {this.state.selectedMerch} onEditMerch = {this.handleEditingMerchInList} /> 
         }
         else if (this.state.formVisibleOnPage) {
             currentlyVisibleState = <NewMerchForm onNewMerchCreation={this.handleAddingNewMerchToList} />
@@ -78,7 +80,7 @@ class MerchControl extends React.Component {
         }
         else {
             currentlyVisibleState = <MerchList merchList={this.state.mainMerchList} onMerchSelection = {this.handleChangingSelectedMerch} />
-            buttonText = "Add Merch;"
+            buttonText = "Add Merch"
         }
         return (
             <React.Fragment>
